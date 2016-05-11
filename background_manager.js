@@ -1,5 +1,7 @@
 function random_movements(){
   console.log("STARTED CREATING");
+  document.getElementById("background").style.left=0;
+  document.body.style.backgroundColor=background_color;
   var background=$('#background');
   var height=background.height();
   //AFTER GETTING THE HEIGHT, DECIDE NUMBER OF HORIZONTAL BANDS
@@ -28,6 +30,9 @@ function random_movements(){
     document.getElementById("random_bar_"+i).style.fontSize=random_font_size+"px";
     document.getElementById("random_bar_"+i).style.marginBottom=random_height+"px";
   }
+  //COLORING
+  document.getElementById("background").style.backgroundColor=background_color;
+  //MOVEmENT
     setInterval(function(){
       continue_movements();
     },1000/60);
@@ -55,7 +60,7 @@ function continue_movements(){
         var random_height=100-random_font_size;
         document.getElementById("random_bar_"+i).style.fontSize=random_font_size+"px";
         document.getElementById("random_bar_"+i).style.marginBottom=random_height+"px";
-        cur_left=$("#random_bar_"+i).width()*-1+Math.floor(Math.random()*900);
+        cur_left=$("#random_bar_"+i).width()*-2+Math.floor(Math.random()*900);
       }
     }
     else{
@@ -80,18 +85,50 @@ function move_background_up(){
      opacity: 1,
      top: "-50px",
      filter: filterVal
-   }, 1000, function() {
+   }, 500, function() {
+     $("#Heading").animate({
+           marginTop:"-500px"
+     },1000,function(){});
+     $( "#tathva" ).animate({
+        left: (((client_window_width*24)/30)-10)+"px"
+      }, 1000, function() {
+     });
+     $( "#tathva_man" ).animate({
+        left: (((client_window_width*23)/30)-10)+"px"
+      }, 1000, function() {
+     });
+     $( "#HOME_2" ).animate({
+        top: "100px"
+      }, 1000, function() {
+     });
+     sroll_over=true;
      toggle=1;
    });
 }
+
 function move_background_down(){
   var filterVal = 'blur(0px)';
   $('#background').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
   $( "#background" ).animate({
      opacity: 1,
      top: "0px"
-   }, 1000, function() {
+   }, 500, function() {
+     sroll_over=true;
      toggle=0;
-
+     $("#Heading").animate({
+         marginTop:(client_window_height/8)+"px"
+     },1000,function(){});
+     $( "#tathva" ).animate({
+        left: client_window_width/30+"px"
+      }, 1000, function() {
+     });
+     $( "#tathva_man" ).animate({
+        left: client_window_width/40+"px"
+      }, 1000, function() {
+     });
+     $( "#HOME_2" ).animate({
+        top: (client_window_height*3)+"px"
+      }, 1000, function() {
+     });
    });
 }
