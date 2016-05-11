@@ -1,0 +1,53 @@
+<html>
+<head>
+  <script src="jquery.js"></script>
+  <script src="core.js"></script>
+  <script src="background_manager.js"></script>
+</head>
+<body>
+  <style>
+  @font-face {
+    font-family: 'Lucida';
+    font-style: normal;
+    font-weight: 100;
+    src:  url(alt.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Lato Hairline'), local('Lato-Hairline'), url(thin.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(ok.woff) format('woff');
+  }
+  #background{
+    z-index: -1;
+  }
+    .random_bar{
+      font-family: 'Lato';
+      font-weight: 100;
+      width:900px;
+      color:#62B958;
+      padding-bottom: 20px;
+    }
+  #Heading{
+    font-family: 'Lato';
+    font-weight: 100;
+    color: #0E8800;
+  }
+  </style>
+  <div id="background" style="position:fixed;height:900px;width:1440px;margin-top:-20px"></div>
+  <div id="content">
+    <div id="main_page">
+        <div id="Heading">Clueless '16</div>
+        <img id="tathva_man" src="tathva.png" style="position:fixed; margin-left:10px;bottom:40px">
+        <div id="tathva" style="position:fixed;left:50px;bottom:10px;font-family:'Lucida';">tathva '16</div>
+        <div id="cpr" style="position:fixed;bottom:10px;font-family:'Lucida';">Clueless Engine 1.0.   AJCL 2016(c)</div>
+    </div>
+  </div>
+</body>
+</html>
