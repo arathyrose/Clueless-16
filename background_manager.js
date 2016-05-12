@@ -31,7 +31,9 @@ function random_movements(){
     document.getElementById("random_bar_"+i).style.marginBottom=random_height+"px";
   }
   //COLORING
-  document.getElementById("background").style.backgroundColor=background_color;
+  document.getElementById("background").style.height=client_window_height+"px";
+  document.getElementById("background").style.width=client_window_width+"px";
+  document.getElementById("background").style.backgroundImage="url('bg.jpg')";
   //MOVEmENT
     setInterval(function(){
       continue_movements();

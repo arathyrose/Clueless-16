@@ -32,7 +32,7 @@ function update_colors(){
   document.getElementById('main_page').style.color=main_color;
     document.getElementById('background').style.color=main_color;
 
-    main_color="rgb("+((Date.now()%100)+100)+","+((Date.now()%100)+100)+","+((Date.now()%100)+100)+")";
+    main_color="rgb("+((Date.now()%100)+150)+","+((Date.now()%100)+150)+","+((Date.now()%100)+0)+")";
 }
 
 
@@ -50,7 +50,7 @@ function scroll_down(){
 }
 function scroll_up(){
   move_background_down();
-  
+
 }
 function toggle_HOME_2(){
   if(toggle==1){
