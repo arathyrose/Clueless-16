@@ -32,7 +32,7 @@ function update_colors(){
   document.getElementById('main_page').style.color=main_color;
     document.getElementById('background').style.color=main_color;
 
-    main_color="rgb("+((Date.now()%100)+150)+","+((Date.now()%100)+150)+","+((Date.now()%100)+0)+")";
+    main_color="rgb("+((Date.now()%70)+180)+","+((Date.now()%70)+180)+","+((Date.now()%70)+70)+")";
 }
 
 
