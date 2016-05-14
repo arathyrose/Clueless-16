@@ -171,7 +171,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
              echo "<div id=\"page_data\">
                  <img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
                  <center><div id='level' style=\"font-family:'Lato';font-weight:400\">Level $level</div>
-                 <img id='q_image' src='$img_name.jpeg'>
+                 <img id='q_image' src='$img_name.jpg'>
                  <div id='answer_box' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
                  <div id='Submit_button' onclick='check_answer()' style=\"font-family:'Lato';font-weight:400\">Submit</div></center>
                </div>
