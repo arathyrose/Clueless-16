@@ -120,15 +120,22 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       session_destroy();
     }
       echo "<script>
+
             function trigger_login(){
             var dataString='OPCODE=1&ERROR_CODE=0&DEST=7';
             load(dataString);
             }
+            clean_HOME();
             </script>";
-      echo "<div>CLUELESS '16</div>
-          <div>Welcome</div>
-          <div>Gotham awaits your call</div>
-          <div id='button' onclick='trigger_login()'>Log In</div>
+      echo "  <div id=\"Heading\" style=\"font-family:'Lato';font-weight:100;\">Clueless '16</div>
+      <img id=\"tathva_man\" src=\"tathva.png\" style=\"position:fixed; margin-left:10px;bottom:40px\" onclick=\"toggle_HOME_2()\">
+      <div id=\"tathva\" style=\"position:fixed;left:50px;bottom:10px;font-family:'Lucida';\">tathva '16</div>
+      <div id=\"cpr\" style=\"position:fixed;bottom:10px;font-family:'Lucida';\">Clueless Engine 1.0.   AJCL 2016(c)</div>
+      <div id=\"HOME_2\" style=\"position:fixed\">
+          <div id=\"HOME2_Text\" style=\"font-family:'Lato';font-weight:400;\">Welcome</div>
+          <div id=\"HOME2_Text2\" style=\"font-family:'Lato';font-weight:100;\">Gotham awaits your call..</div>
+          <div id=\"fb_button\" style=\"width:100px;height:50px;background-color:#2D6DD7;\" onclick='trigger_login()'></div>
+      </div>
           ";
     }
     else if($destination==2){
@@ -153,6 +160,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
              function jump_to_profile(){
                 load('OPCODE=1&ERROR_CODE=0&DEST=4');
               }
+              clean_QUESTION();
              </script>";
         $level=cur_user_cur_level(); //OBTAIN FROM DATABASE
         echo "
@@ -189,6 +197,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                   load('OPCODE=1&ERROR_CODE=0&DEST=4');
                 }
                 </script>
+                clean_RULES();
                 ";
          echo "
               <div id='Rules_heading'>Rules:</div>
@@ -220,10 +229,11 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               function jump_to_profile(){
                 load('OPCODE=1&ERROR_CODE=0&DEST=4');
               }
+              clean_PROFILE();
               </script>
               ";
           echo "
-              <div id='Rules_heading'>Profile:</div>
+              <div id='Profile_heading'>Profile:</div>
               <div>Name:";
           echo cur_user_name();
           echo "</div>
