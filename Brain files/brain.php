@@ -86,7 +86,7 @@ For now, lets use following details for user.
 Apart from this an error channel is also used. The ERROR_CODE parameter displays error.Default=-1
 
 1-Invalid User/Password
-2-Duplicate User
+2-Invalid email
 3-Passwords Dont Match
 4-Taunt_Success
 5-Taunt_Fail
@@ -163,6 +163,12 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               function logout(){
                  load('OPCODE=1&ERROR_CODE=0&DEST=1');
                }
+               $('div[contenteditable]').keydown(function(e) {
+                     if (e.keyCode === 13) {
+                        check_answer();
+                         return false;
+                     }
+               });
               clean_QUESTION();
              </script>";
 
@@ -378,6 +384,12 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       function warp_to_join(){
         load('OPCODE=1&DEST=8');
       }
+      $('div[contenteditable]').keydown(function(e) {
+            if (e.keyCode === 13) {
+                log_in_trigger();
+                return false;
+            }
+      });
       clean_LOGIN();
     </script>
     ";
@@ -387,7 +399,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
           <div id='email_label' style=\"font-family:'Lato';font-weight:100\">Email:</div>
           <div id='email' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'></div>
           <div id='password_label' style=\"font-family:'Lato';font-weight:100\">Password:</div>
-          <div id='password' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'></div>
+          <div id='password' style=\"font-family:'Lato';font-weight:100\"><div id='password_content' contenteditable='true'></div></div>
           <div id='log_in_trigger' style=\"font-family:'Lato';font-weight:400\" onclick='log_in_trigger()' action='submit'>Log In</div>
           <div id='join_me_link' style=\"font-family:'Lato';font-weight:100\" onclick='warp_to_join()'>First time? Join here</div>
         </form>
@@ -396,7 +408,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
   else if($destination==8){
       echo "
       <form>
-          <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Login</div>
+          <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Join</div>
           <div id='name_label' style=\"font-family:'Lato';font-weight:100\">Name:</div>
           <div id='name' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='college_label' style=\"font-family:'Lato';font-weight:100\">College:</div>
@@ -406,9 +418,9 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
           <div id='mobile_label' style=\"font-family:'Lato';font-weight:100\"> Mobile:</div>
           <div id='mobile' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='password_label' style=\"font-family:'Lato';font-weight:100\">Password:</div>
-          <div id='password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
+          <div id='password' style=\"font-family:'Lato';font-weight:100\"><div id='password_content' contenteditable='true'></div></div>
           <div id='conf_password_label' style=\"font-family:'Lato';font-weight:100\">Confirm Password:</div>
-          <div id='conf_password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
+          <div id='conf_password' style=\"font-family:'Lato';font-weight:100\"><div id='conf_password_content' contenteditable='true'></div></div>
           <div id='join_trigger' onclick='join_trigger()' style=\"font-family:'Lato';font-weight:400\">Sign Up</div>
           <div id='log_in_link' onclick='warp_to_login()' style=\"font-family:'Lato';font-weight:100\">Already a user? Login Here</div>
         </form>
@@ -432,6 +444,12 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
         function warp_to_login(){
           load('OPCODE=1&ERROR_CODE=0&DEST=7');
         }
+        $('div[contenteditable]').keydown(function(e) {
+              if (e.keyCode === 13) {
+                  join_trigger();
+                  return false;
+              }
+        });
         clean_JOIN();
       </script>
       ";
@@ -461,7 +479,14 @@ else if($op_code==3){              //USER DETAILS MANAGEMENT
         $mobile=$_POST["MOBILE"];
         $email=$_POST["EMAIL"];
         $password=$_POST["PASSWORD"];
-        $check=check_if_present($email);
+        //CHECK=1 is BAD
+        $check=0;
+        if(strpos($email,"@")==false||strpos($email,".")==false){
+          $check=1;
+        }
+        if($check!=1){
+          $check=check_if_present($email);
+        }
         if($check==1){
           echo "<script>load('OPCODE=1&ERROR_CODE=2&DEST=8');</script>";
         }
@@ -505,7 +530,7 @@ else if($Error_code==1){
     echo "<script>throw_error('Invalid Email/Password');</script>";
 }
 else if($Error_code==2){
-    echo "<script>throw_error('Duplicate User Account');</script>";
+    echo "<script>throw_error('Invalid Email ID');</script>";
 }
 else if($Error_code==3){
     echo "<script>throw_error('Passwords dont match');</script>";
@@ -653,10 +678,10 @@ function insert_user($email,$name,$college,$mobile,$password){
 }
 function execute_MYSQL($sql){
   //DATABASE DETAILS
-  $servername="localhost";
-  $username = "root";
-  $password='Amaljose@96';
-  $database= "test";
+  $servername="mysql9.000webhost.com";
+  $username = "a2122877_amal";
+  $password='Amaljose96';
+  $database= "a2122877_db";
   // Create connection
   $conn = new mysqli($servername, $username, $password, $database);
   // Check connection

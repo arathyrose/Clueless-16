@@ -21,7 +21,7 @@ function clean_JOIN(){
   document.getElementById("password_label").style.fontSize=client_window_height/20;
   document.getElementById("password").style.marginLeft=client_window_width/5;
   document.getElementById("password").style.marginTop=client_window_height/25;
-  document.getElementById("password").style.fontSize=client_window_height/20;
+  document.getElementById("password_content").style.fontSize=client_window_height/20;
   document.getElementById("password").style.padding = "5px";
   document.getElementById("password").style.backgroundColor=background_color;
   document.getElementById("password").style.borderColor=main_color;
@@ -33,7 +33,7 @@ function clean_JOIN(){
   document.getElementById("conf_password_label").style.fontSize=client_window_height/20;
   document.getElementById("conf_password").style.marginLeft=client_window_width/5;
   document.getElementById("conf_password").style.marginTop=client_window_height/25;
-  document.getElementById("conf_password").style.fontSize=client_window_height/20;
+  document.getElementById("conf_password_content").style.fontSize=client_window_height/20;
   document.getElementById("conf_password").style.padding = "5px";
   document.getElementById("conf_password").style.backgroundColor=background_color;
   document.getElementById("conf_password").style.borderColor=main_color;
@@ -89,7 +89,7 @@ function clean_JOIN(){
   document.getElementById("log_in_link").style.marginTop=client_window_height/25;
   document.getElementById("log_in_link").style.fontSize=client_window_height/25;
   var filterVal = 'blur(5px)';
-  $('#password').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal);
-  $('#conf_password').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal);
+  $('#password_content').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal);
+  $('#conf_password_content').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal);
 
 }
