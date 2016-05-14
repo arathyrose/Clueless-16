@@ -15,6 +15,9 @@ function clean_HOME(){
     document.getElementById("HOME2_Text2").style.marginTop=client_window_height/15;
     document.getElementById("HOME2_Text2").style.marginBottom=client_window_height/15;
     document.getElementById("fb_button").style.marginLeft=client_window_width*2/3;
+    setTimeout(function(){
+      scroll_down();
+    },4000);
 
 }
 function scroll_down(){
