@@ -160,6 +160,9 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
              function jump_to_profile(){
                 load('OPCODE=1&ERROR_CODE=0&DEST=4');
               }
+              function logout(){
+                 load('OPCODE=1&ERROR_CODE=0&DEST=1');
+               }
               clean_QUESTION();
              </script>";
 
@@ -179,6 +182,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                    <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
                    <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
                    <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+                   <div id='link5' onclick='logout()'  style=\"font-family:'Lato';font-weight:400\">Log Out</div>
                    <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
                  </div>";
       }
@@ -198,6 +202,9 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                 }
                 function jump_to_profile(){
                   load('OPCODE=1&ERROR_CODE=0&DEST=4');
+                }
+                function logout(){
+                  load('OPCODE=1&ERROR_CODE=0&DEST=1');
                 }
                 clean_RULES();
                 </script>
@@ -220,6 +227,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
                <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
                <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+               <div id='link5' onclick='logout()'  style=\"font-family:'Lato';font-weight:400\">Log Out</div>
                <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
              </div>
               ";
@@ -240,6 +248,9 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               }
               function jump_to_profile(){
                 load('OPCODE=1&ERROR_CODE=0&DEST=4');
+              }
+              function logout(){
+                load('OPCODE=1&ERROR_CODE=0&DEST=1');
               }
               clean_PROFILE();
               </script>
@@ -262,6 +273,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                     <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
                     <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
                     <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+                    <div id='link5' onclick='logout()'  style=\"font-family:'Lato';font-weight:400\">Log Out</div>
                     <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
                   </div>";
         }
@@ -281,6 +293,9 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                 }
                 function jump_to_profile(){
                   load('OPCODE=1&ERROR_CODE=0&DEST=4');
+                }
+                function logout(){
+                  load('OPCODE=1&ERROR_CODE=0&DEST=1');
                 }
                 clean_AWAY();
                 </script>
@@ -302,6 +317,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
           <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
           <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
           <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+          <div id='link5' onclick='logout()'  style=\"font-family:'Lato';font-weight:400\">Log Out</div>
           <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
         </div>
                 ";
@@ -323,13 +339,16 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
     function jump_to_profile(){
       load('OPCODE=1&ERROR_CODE=0&DEST=4');
     }
-    clean_AWAY();
+    function logout(){
+      load('OPCODE=1&ERROR_CODE=0&DEST=1');
+    }
+    clean_HOME_H();
     </script>
     ";
     echo "
     <div id=\"page_data\">
       <img id=\"sidebar_trigger_content\" src=\"arrow_left.png\" onclick=\"callsidebar()\">
-      <div id='AWAY_Heading' style=\"font-family:'Lato';font-weight:400\">HALL OF FAME - HOME</div>
+      <div id='HOME_Heading' style=\"font-family:'Lato';font-weight:400\">HALL OF FAME - HOME</div>
       <div id='table'>
         ";
     build_home_highscore();
@@ -343,6 +362,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
           <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
           <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
           <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+          <div id='link5' onclick='logout()'  style=\"font-family:'Lato';font-weight:400\">Log Out</div>
           <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
         </div>
     ";

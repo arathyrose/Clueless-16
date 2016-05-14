@@ -21,7 +21,7 @@ function clean_AWAY(){
   $(".row_slno").css("font-size","40px");
   $(".row_name").css("font-size","50px");
   $(".row_name").css("margin-left","30px");
-  $(".row_college").css("font-size","45px");
+  $(".row_college").css("font-size","50px");
   $(".row_college").css("margin-left","30px");
   $(".row_showlevel").css("font-size","30px");
   $(".row_showlevel").css("margin-left","30px");

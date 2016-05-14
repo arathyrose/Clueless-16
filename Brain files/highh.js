@@ -1,12 +1,12 @@
 
-function clean_AWAY(){
+function clean_HOME_H(){
   var filterVal = 'blur(4px)';
   $('#background').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
-  document.getElementById("AWAY_Heading").style.fontSize=client_window_height/10;
-  document.getElementById("AWAY_Heading").style.marginTop=client_window_height/15;
-  document.getElementById("AWAY_Heading").style.marginBottom=client_window_height/10;
-  document.getElementById("AWAY_Heading").style.marginLeft=client_window_width/10;
-  document.getElementById("AWAY_Heading").style.textAlign="center";
+  document.getElementById("HOME_Heading").style.fontSize=client_window_height/10;
+  document.getElementById("HOME_Heading").style.marginTop=client_window_height/15;
+  document.getElementById("HOME_Heading").style.marginBottom=client_window_height/10;
+  document.getElementById("HOME_Heading").style.marginLeft=client_window_width/10;
+  document.getElementById("HOME_Heading").style.textAlign="center";
   $(".row").css("margin-top","20px");
   $(".row").css("border-style","solid").css("border-color",main_color).css("border-width","1px");
   $(".row").css("height","200px");

@@ -4,7 +4,7 @@ var main_color="#FFFF00";
 var background_color="#000";
 var scroll_over=true;
 function gototathva(){
-  window.location.href="www.tathva.org";
+  window.location.href="http://www.tathva.org";
 }
 function update_colors(){
   document.getElementById('content').style.color=main_color;
@@ -63,7 +63,7 @@ function initsidebar(){
   document.getElementById("sidebar_trigger_sidebar").style.width=client_window_width/30;
   document.getElementById("sidebar_trigger_sidebar").style.height=client_window_height/18;
   document.getElementById("sidebar_trigger_sidebar").style.marginBottom=client_window_height/18;
-  for(var i=0;i<=4;i++){
+  for(var i=0;i<=5;i++){
     document.getElementById("link"+i).style.fontSize=client_window_height/40;
     document.getElementById("link"+i).style.marginTop=client_window_height/50;
     document.getElementById("link"+i).style.marginLeft=client_window_width/20;
