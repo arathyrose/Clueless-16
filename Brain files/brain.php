@@ -166,7 +166,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
     $level=cur_user_cur_level(); //OBTAIN FROM DATABASE
     $img_name=get_image_name($level);
              echo "<div id=\"page_data\">
-                 <img id='sidebar_trigger_content' src=\"arrow_left.png"\ onclick=\"callsidebar()\">
+                 <img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
                  <center><div id='level' style=\"font-family:'Lato';font-weight:400\">Level $level</div>
                  <img id='q_image' src='$img_name.jpg'>
                  <div id='answer_box' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Answer here</div>
@@ -199,8 +199,8 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                 function jump_to_profile(){
                   load('OPCODE=1&ERROR_CODE=0&DEST=4');
                 }
-                </script>
                 clean_RULES();
+                </script>
                 ";
          echo "
          <div id=\"page_data\">
@@ -244,7 +244,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               clean_PROFILE();
               </script>
               ";
-          echo "<img id='sidebar_trigger_content' src=\"arrow_left.png"\ onclick=\"callsidebar()\">
+          echo "<img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
               <div id='Profile_heading'>Profile:</div>
               <div>Name:";
           echo cur_user_name();
@@ -324,8 +324,8 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
     function jump_to_profile(){
       load('OPCODE=1&ERROR_CODE=0&DEST=4');
     }
-    </script>
     clean_AWAY();
+    </script>
     ";
     echo "
     <div id=\"page_data\">
