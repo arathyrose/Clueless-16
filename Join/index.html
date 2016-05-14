@@ -1,0 +1,60 @@
+<html>
+<head>
+  <script src="jquery.js"></script>
+  <script src="core.js"></script>
+  <script src="join.js"></script>
+  <script src="background_manager.js"></script>
+</head>
+<body>
+  <style>
+  @font-face {
+    font-family: 'Lucida';
+    font-style: normal;
+    font-weight: 100;
+    src:  url(alt.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Lato Hairline'), local('Lato-Hairline'), url(thin.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(ok.woff) format('woff');
+  }
+  #background{
+    top:0px;
+    z-index: -1;
+  }
+    .random_bar{
+      font-family: 'Lato';
+      font-weight: 100;
+      width:900px;
+      padding-bottom: 20px;
+    }
+  </style>
+  <div id="background" style="position:fixed;height:900px;width:1440px;margin-top:-20px"></div>
+  <div id="content">
+    <form>
+        <div id="Heading" style="font-family:'Lato';font-weight:400">Login</div>
+        <div id='name_label' style="font-family:'Lato';font-weight:100">Name:</div>
+        <div id='name' contenteditable='true' style="font-family:'Lato';font-weight:100">Name</div>
+        <div id='college_label' style="font-family:'Lato';font-weight:100">College:</div>
+        <div id='college' contenteditable='true' style="font-family:'Lato';font-weight:100">College</div>
+        <div id='email_label' style="font-family:'Lato';font-weight:100">Email:</div>
+        <div id='email' contenteditable='true' style="font-family:'Lato';font-weight:100">Email</div>
+        <div id='mobile_label' style="font-family:'Lato';font-weight:100"> Mobile:</div>
+        <div id='mobile' contenteditable='true' style="font-family:'Lato';font-weight:100">Mobile</div>
+        <div id='password_label' style="font-family:'Lato';font-weight:100">Password:</div>
+        <div id='password' contenteditable='true' style="font-family:'Lato';font-weight:100">Password</div>
+        <div id='conf_password_label' style="font-family:'Lato';font-weight:100">Confirm Password:</div>
+        <div id='conf_password' contenteditable='true' style="font-family:'Lato';font-weight:100">Password</div>
+        <div id='join_trigger' onclick='join_trigger()' style="font-family:'Lato';font-weight:400">Sign Up</div>
+        <div id='log_in_link' onclick='warp_to_login()' style="font-family:'Lato';font-weight:100">Already a user? Login Here</div>
+      </form>
+  </div>
+</body>
+</html>
