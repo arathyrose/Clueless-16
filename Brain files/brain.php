@@ -70,6 +70,7 @@ For now, lets use following details for user.
  MOBILE- STRING
  EMAIL- STRING
  PASSWORD- STRING
+ BROWSER- STRING
 
  INSERT INTO USERS VALUES(NAME,COLLEGE,MOBILE,EMAIL,PASSWORD)
 
@@ -80,6 +81,7 @@ For now, lets use following details for user.
   TIME
   EMAIL
   PASSWORD
+  BROWSER
 
   From here the password is checked. If yes, load QUESTION page. Else load same login page.
 
@@ -134,7 +136,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       <div id=\"HOME_2\" style=\"position:fixed\">
           <div id=\"HOME2_Text\" style=\"font-family:'Lato';font-weight:400;\">Welcome</div>
           <div id=\"HOME2_Text2\" style=\"font-family:'Lato';font-weight:100;\">Gotham awaits your call..</div>
-          <div id=\"fb_button\" style=\"width:100px;height:50px;background-color:#2D6DD7;\" onclick='trigger_login()'></div>
+          <div id=\"fb_button\" style=\"width:100px;height:50px;background-color:#2D6DD7;\" onclick='trigger_login()'>Login</div>
       </div>
           ";
     }
@@ -379,7 +381,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       function log_in_trigger(){
         var email=$('#email').text();
         var password=$('#password').text();
-        load('OPCODE=3&ERROR_CODE=0&TIME=1&EMAIL='+email+'&PASSWORD='+password);
+        load('OPCODE=3&ERROR_CODE=0&TIME=1&EMAIL='+email+'&PASSWORD='+password+'&BROWSER='+navigator.userAgent);
       }
       function warp_to_join(){
         load('OPCODE=1&DEST=8');
@@ -438,7 +440,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
             load('OPCODE=1&DEST=8&ERROR_CODE=3');
           }
           else{
-              load('OPCODE=3&ERROR_CODE=0&TIME=0&NAME='+name+'&COLLEGE='+college+'&MOBILE='+mobile+'&EMAIL='+email+'&PASSWORD='+password);
+              load('OPCODE=3&ERROR_CODE=0&TIME=0&NAME='+name+'&COLLEGE='+college+'&MOBILE='+mobile+'&EMAIL='+email+'&PASSWORD='+password+'&BROWSER='+navigator.userAgent);
           }
         }
         function warp_to_login(){
@@ -492,7 +494,8 @@ else if($op_code==3){              //USER DETAILS MANAGEMENT
         }
         else{
           insert_user($email,$name,$college,$mobile,$password);
-          load_user($email);
+          $browser=$_POST['BROWSER'];
+          load_user($email,$browser,$type);
           echo "<script>
             load('OPCODE=1&ERROR_CODE=0&DEST=2');
             </script>";
@@ -511,7 +514,8 @@ else if($op_code==3){              //USER DETAILS MANAGEMENT
               echo "<script>load('OPCODE=1&ERROR_CODE=1&DEST=7');</script>";
             }
             else{
-              load_user($email);
+              $browser=$_POST['BROWSER'];
+              load_user($email,$browser,$type);
               echo "<script>load('OPCODE=1&ERROR_CODE=0&DEST=2');</script>";
             }
           }
@@ -667,7 +671,9 @@ function authenticator($email,$password){
   	}
   }
 }
-function load_user($email){
+function load_user($email,$browser,$type){
+  $cur_time=date('l jS F,Y h:i:s A');
+  $result=execute_MYSQL("INSERT INTO LOGINS VALUES('$email','$browser',$type,'$cur_time')");
   session_start();
   $_SESSION["EMAIL"]=$email;
 }
