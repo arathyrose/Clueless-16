@@ -40,4 +40,6 @@ function clean_LOGIN(){
   document.getElementById("join_me_link").style.marginLeft=client_window_width/8;
   document.getElementById("join_me_link").style.marginTop=client_window_height/25;
   document.getElementById("join_me_link").style.fontSize=client_window_height/25;
+  var filterVal = 'blur(5px)';
+  $('#password').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal);
 }

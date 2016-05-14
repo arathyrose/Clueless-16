@@ -88,4 +88,8 @@ function clean_JOIN(){
   document.getElementById("log_in_link").style.marginLeft=client_window_width/8;
   document.getElementById("log_in_link").style.marginTop=client_window_height/25;
   document.getElementById("log_in_link").style.fontSize=client_window_height/25;
+  var filterVal = 'blur(5px)';
+  $('#password').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal);
+  $('#conf_password').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal);
+
 }
