@@ -3,6 +3,7 @@ var client_window_width=1400;
 var main_color="#FFFF00";
 var background_color="#000";
 var scroll_over=true;
+var mobile_mode=0;
 function gototathva(){
   window.location.href="http://www.tathva.org";
 }
@@ -78,7 +79,17 @@ function initsidebar(){
 
 
 $("document").ready(function(){
-  random_movements();
-  update_colors();
+  mobile_mode=1;
+  if(navigator.userAgent.search("Mobile")==-1){
+    mobile_mode=0;
+  }
+  if(mobile_mode==1){
+    alert("MOBILE");
+  }
+
+  background_init();
+    update_colors();
+  if(mobile_mode==0){
   setInterval(function(){update_colors();},1000/60);
+  }
 });

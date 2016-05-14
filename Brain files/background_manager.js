@@ -1,6 +1,5 @@
-function random_movements(){
+function background_init(){
   console.log("STARTED CREATING");
-  document.getElementById("background").style.left=0;
   document.body.style.backgroundColor=background_color;
   var background=$('#background');
   var height=background.height();
@@ -35,10 +34,11 @@ function random_movements(){
   document.getElementById("background").style.width=client_window_width+"px";
   document.getElementById("background").style.backgroundImage="url('bg.jpg')";
   //MOVEmENT
+
     setInterval(function(){
       continue_movements();
     },1000/60);
-
+  
 }
 function continue_movements(){
   //console.log("MOVING");
@@ -81,8 +81,10 @@ function continue_movements(){
   }
 }
 function move_background_up(){
-  var filterVal = 'blur(4px)';
-  $('#background').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
+  if(mobile_mode==0){
+    var filterVal = 'blur(4px)';
+    $('#background').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
+  }
   $( "#background" ).animate({
      opacity: 1,
      top: "-50px",
@@ -109,8 +111,10 @@ function move_background_up(){
 }
 
 function move_background_down(){
-  var filterVal = 'blur(0px)';
-  $('#background').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
+  if(mobile_mode==0){
+    var filterVal = 'blur(0px)';
+    $('#background').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
+  }
   $( "#background" ).animate({
      opacity: 1,
      top: "0px"
