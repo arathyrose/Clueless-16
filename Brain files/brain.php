@@ -168,8 +168,8 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
              echo "<div id=\"page_data\">
                  <img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
                  <center><div id='level' style=\"font-family:'Lato';font-weight:400\">Level $level</div>
-                 <img id='q_image' src='$img_name.jpg'>
-                 <div id='answer_box' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Answer here</div>
+                 <img id='q_image' src='$img_name.jpeg'>
+                 <div id='answer_box' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
                  <div id='Submit_button' onclick='check_answer()' style=\"font-family:'Lato';font-weight:400\">Submit</div></center>
                </div>
                  <div id='sidebar'>
@@ -366,9 +366,9 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       <form>
           <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Login</div>
           <div id='email_label' style=\"font-family:'Lato';font-weight:100\">Email:</div>
-          <div id='email' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'>Email</div>
+          <div id='email' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'></div>
           <div id='password_label' style=\"font-family:'Lato';font-weight:100\">Password:</div>
-          <div id='password' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'>Password</div>
+          <div id='password' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'></div>
           <div id='log_in_trigger' style=\"font-family:'Lato';font-weight:400\" onclick='log_in_trigger()' action='submit'>Log In</div>
           <div id='join_me_link' style=\"font-family:'Lato';font-weight:100\" onclick='warp_to_join()'>First time? Join here</div>
         </form>
@@ -379,17 +379,17 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       <form>
           <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Login</div>
           <div id='name_label' style=\"font-family:'Lato';font-weight:100\">Name:</div>
-          <div id='name' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Name</div>
+          <div id='name' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='college_label' style=\"font-family:'Lato';font-weight:100\">College:</div>
-          <div id='college' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">College</div>
+          <div id='college' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='email_label' style=\"font-family:'Lato';font-weight:100\">Email:</div>
-          <div id='email' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Email</div>
+          <div id='email' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='mobile_label' style=\"font-family:'Lato';font-weight:100\"> Mobile:</div>
-          <div id='mobile' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Mobile</div>
+          <div id='mobile' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='password_label' style=\"font-family:'Lato';font-weight:100\">Password:</div>
-          <div id='password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Password</div>
+          <div id='password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='conf_password_label' style=\"font-family:'Lato';font-weight:100\">Confirm Password:</div>
-          <div id='conf_password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Password</div>
+          <div id='conf_password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\"></div>
           <div id='join_trigger' onclick='join_trigger()' style=\"font-family:'Lato';font-weight:400\">Sign Up</div>
           <div id='log_in_link' onclick='warp_to_login()' style=\"font-family:'Lato';font-weight:100\">Already a user? Login Here</div>
         </form>
@@ -636,7 +636,7 @@ function execute_MYSQL($sql){
   $servername="localhost";
   $username = "root";
   $password='Amaljose@96';
-  $database= "test";
+  $database= "clueless_16";
   // Create connection
   $conn = new mysqli($servername, $username, $password, $database);
   // Check connection
