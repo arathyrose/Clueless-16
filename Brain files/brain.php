@@ -162,23 +162,25 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               }
               clean_QUESTION();
              </script>";
-        $level=cur_user_cur_level(); //OBTAIN FROM DATABASE
-        echo "<div>Level $level</div>";
-        echo "
-            <img src='";
-        $img_name=get_image_name($level);
-        echo $img_name;
-        echo ".jpeg'>
-            <div id='answer_box' contenteditable='true'>Answer here</div>
-            <div id='Submit_button' onclick='check_answer()'>Submit</div>
-            <div id='links'>
-            <div id='link0' onclick='jump_to_question()'>Game</div>
-            <div id='link1' onclick='jump_to_profile()'>Profile</div>
-            <div id='link2' onclick='jump_to_rules()'>Rules</div>
-            <div id='link3' onclick='jump_to_highscore_A()'>Highscore-Away</div>
-            <div id='link4' onclick='jump_to_highscore_H()'>Highscore-Home</div>
-            </div>
-            ";
+
+    $level=cur_user_cur_level(); //OBTAIN FROM DATABASE
+    $img_name=get_image_name($level);
+             echo "<div id=\"page_data\">
+                 <img id='sidebar_trigger_content' src=\"arrow_left.png"\ onclick=\"callsidebar()\">
+                 <center><div id='level' style=\"font-family:'Lato';font-weight:400\">Level $level</div>
+                 <img id='q_image' src='$img_name.jpg'>
+                 <div id='answer_box' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Answer here</div>
+                 <div id='Submit_button' onclick='check_answer()' style=\"font-family:'Lato';font-weight:400\">Submit</div></center>
+               </div>
+                 <div id='sidebar'>
+                   <img id='sidebar_trigger_sidebar' src=\"arrow_right.png\" onclick=\"closesidebar()\">
+                   <div id='link0' onclick='jump_to_question()'  style=\"font-family:'Lato';font-weight:400\">Game</div>
+                   <div id='link1' onclick='jump_to_profile()'  style=\"font-family:'Lato';font-weight:400\">Profile</div>
+                   <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
+                   <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
+                   <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+                   <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
+                 </div>";
       }
       else if($destination==3){
         echo "<script>
@@ -201,16 +203,25 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                 clean_RULES();
                 ";
          echo "
-              <div id='Rules_heading'>Rules:</div>
-              <div>1.Hello</div>
-              <div>2.How are you?</div>
-              <div id='links'>
-                <div id='link0' onclick='jump_to_question()'>Game</div>
-                <div id='link1' onclick='jump_to_profile()'>Profile</div>
-                <div id='link2' onclick='jump_to_rules()'>Rules</div>
-                <div id='link3' onclick='jump_to_highscore_A()'>Highscore-Away</div>
-                <div id='link4' onclick='jump_to_highscore_H()'>Highscore-Home</div>
-              </div>
+         <div id=\"page_data\">
+             <img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
+             <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Rules:</div>
+             <div id='rule1' style=\"font-family:'Lato';font-weight:400\">1.Hello</div>
+             <div id='rule2' style=\"font-family:'Lato';font-weight:400\">2.How are you?</div>
+             <div id='rule3' style=\"font-family:'Lato';font-weight:400\">3.How are you?</div>
+             <div id='rule4' style=\"font-family:'Lato';font-weight:400\">4.How are you?</div>
+             <div id='rule5' style=\"font-family:'Lato';font-weight:400\">5.How are you?</div>
+             <div id='rule6' style=\"font-family:'Lato';font-weight:400\">6.How are you?</div>
+           </div>
+             <div id='sidebar'>
+               <img id='sidebar_trigger_sidebar' src=\"arrow_right.png\" onclick=\"closesidebar()\">
+               <div id='link0' onclick='jump_to_question()'  style=\"font-family:'Lato';font-weight:400\">Game</div>
+               <div id='link1' onclick='jump_to_profile()'  style=\"font-family:'Lato';font-weight:400\">Profile</div>
+               <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
+               <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
+               <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+               <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
+             </div>
               ";
        }
        else if($destination==4){
@@ -233,7 +244,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               clean_PROFILE();
               </script>
               ";
-          echo "
+          echo "<img id='sidebar_trigger_content' src=\"arrow_left.png"\ onclick=\"callsidebar()\">
               <div id='Profile_heading'>Profile:</div>
               <div>Name:";
           echo cur_user_name();
@@ -244,13 +255,15 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                 <div>College:";
           echo cur_user_college();
           echo "</div>
-                <div id='links'>
-                <div id='link0' onclick='jump_to_question()'>Game</div>
-                <div id='link1' onclick='jump_to_profile()'>Profile</div>
-                <div id='link2' onclick='jump_to_rules()'>Rules</div>
-                <div id='link3' onclick='jump_to_highscore_A()'>Highscore-Away</div>
-                <div id='link4' onclick='jump_to_highscore_H()'>Highscore-Home</div>
-                </div>
+          <div id='sidebar'>
+            <img id='sidebar_trigger_sidebar' src=\"arrow_right.png\" onclick=\"closesidebar()\">
+            <div id='link0' onclick='jump_to_question()'  style=\"font-family:'Lato';font-weight:400\">Game</div>
+            <div id='link1' onclick='jump_to_profile()'  style=\"font-family:'Lato';font-weight:400\">Profile</div>
+            <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
+            <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
+            <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+            <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
+          </div>
                 ";
         }
         else if($destination==5){             //Highscore-Away
@@ -270,22 +283,28 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
                 function jump_to_profile(){
                   load('OPCODE=1&ERROR_CODE=0&DEST=4');
                 }
+                clean_AWAY();
                 </script>
                 ";
           echo "
-                <div id='Rules_heading'>HALL OF FAME - AWAY</div>
-                <div id='table'>
+          <div id=\"page_data\">
+            <img id=\"sidebar_trigger_content\" src=\"arrow_left.png\" onclick=\"callsidebar()\">
+            <div id='AWAY_Heading' style=\"font-family:'Lato';font-weight:400\">HALL OF FAME - AWAY</div>
+            <div id='table'>
                 ";
           build_away_highscore();
           echo "
-                </div>
-                <div id='links'>
-                <div id='link0' onclick='jump_to_question()'>Game</div>
-                <div id='link1' onclick='jump_to_profile()'>Profile</div>
-                <div id='link2' onclick='jump_to_rules()'>Rules</div>
-                <div id='link3' onclick='jump_to_highscore_A()'>Highscore-Away</div>
-                <div id='link4' onclick='jump_to_highscore_H()'>Highscore-Home</div>
-                </div>
+          </div>
+        </div>
+        <div id='sidebar'>
+          <img id='sidebar_trigger_sidebar' src=\"arrow_right.png\" onclick=\"closesidebar()\">
+          <div id='link0' onclick='jump_to_question()'  style=\"font-family:'Lato';font-weight:400\">Game</div>
+          <div id='link1' onclick='jump_to_profile()'  style=\"font-family:'Lato';font-weight:400\">Profile</div>
+          <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
+          <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
+          <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+          <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
+        </div>
                 ";
        }
        else if($destination==6){         //HIGHSCORE - HOME
@@ -306,21 +325,27 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       load('OPCODE=1&ERROR_CODE=0&DEST=4');
     }
     </script>
+    clean_AWAY();
     ";
     echo "
-    <div id='Rules_heading'>HALL OF FAME - AWAY</div>
-    <div id='table'>
+    <div id=\"page_data\">
+      <img id=\"sidebar_trigger_content\" src=\"arrow_left.png\" onclick=\"callsidebar()\">
+      <div id='AWAY_Heading' style=\"font-family:'Lato';font-weight:400\">HALL OF FAME - HOME</div>
+      <div id='table'>
         ";
     build_home_highscore();
         echo "
-    </div>
-    <div id='links'>
-      <div id='link0' onclick='jump_to_question()'>Game</div>
-      <div id='link1' onclick='jump_to_profile()'>Profile</div>
-      <div id='link2' onclick='jump_to_rules()'>Rules</div>
-      <div id='link3' onclick='jump_to_highscore_A()'>Highscore-Away</div>
-      <div id='link4' onclick='jump_to_highscore_H()'>Highscore-Home</div>
-    </div>
+        </div>
+      </div>
+        <div id='sidebar'>
+          <img id='sidebar_trigger_sidebar' src=\"arrow_right.png\" onclick=\"closesidebar()\">
+          <div id='link0' onclick='jump_to_question()'  style=\"font-family:'Lato';font-weight:400\">Game</div>
+          <div id='link1' onclick='jump_to_profile()'  style=\"font-family:'Lato';font-weight:400\">Profile</div>
+          <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
+          <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
+          <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+          <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
+        </div>
     ";
   }
   else if($destination==7){
@@ -334,33 +359,40 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       function warp_to_join(){
         load('OPCODE=1&DEST=8');
       }
+      clean_LOGIN();
     </script>
     ";
       echo "
-        <div>Email:</div>
-        <div id='email' contenteditable='true'>Email</div>
-        <div>Password:</div>
-        <div id='password' contenteditable='true'>Password</div>
-        <div id='log_in_trigger' onclick='log_in_trigger()'>Log In</div>
-        <div id='join_me_link' onclick='warp_to_join()'>First time? Join here</div>
+      <form>
+          <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Login</div>
+          <div id='email_label' style=\"font-family:'Lato';font-weight:100\">Email:</div>
+          <div id='email' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'>Email</div>
+          <div id='password_label' style=\"font-family:'Lato';font-weight:100\">Password:</div>
+          <div id='password' style=\"font-family:'Lato';font-weight:100\" contenteditable='true'>Password</div>
+          <div id='log_in_trigger' style=\"font-family:'Lato';font-weight:400\" onclick='log_in_trigger()' action='submit'>Log In</div>
+          <div id='join_me_link' style=\"font-family:'Lato';font-weight:100\" onclick='warp_to_join()'>First time? Join here</div>
+        </form>
       ";
   }
   else if($destination==8){
       echo "
-        <div>Name:</div>
-        <div id='name' contenteditable='true'>Name</div>
-        <div>College:</div>
-        <div id='college' contenteditable='true'>College</div>
-        <div>Email:</div>
-        <div id='email' contenteditable='true'>Email</div>
-        <div> Mobile:</div>
-        <div id='mobile' contenteditable='true'>Mobile</div>
-        <div>Password:</div>
-        <div id='password' contenteditable='true'>Password</div>
-        <div>Confirm Password:</div>
-        <div id='conf_password' contenteditable='true'>Password</div>
-        <div id='join_trigger' onclick='join_trigger()'>Sign Up</div>
-        <div id='log_in_link' onclick='warp_to_login()'>Already a user? Login Here</div>
+      <form>
+          <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Login</div>
+          <div id='name_label' style=\"font-family:'Lato';font-weight:100\">Name:</div>
+          <div id='name' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Name</div>
+          <div id='college_label' style=\"font-family:'Lato';font-weight:100\">College:</div>
+          <div id='college' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">College</div>
+          <div id='email_label' style=\"font-family:'Lato';font-weight:100\">Email:</div>
+          <div id='email' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Email</div>
+          <div id='mobile_label' style=\"font-family:'Lato';font-weight:100\"> Mobile:</div>
+          <div id='mobile' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Mobile</div>
+          <div id='password_label' style=\"font-family:'Lato';font-weight:100\">Password:</div>
+          <div id='password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Password</div>
+          <div id='conf_password_label' style=\"font-family:'Lato';font-weight:100\">Confirm Password:</div>
+          <div id='conf_password' contenteditable='true' style=\"font-family:'Lato';font-weight:100\">Password</div>
+          <div id='join_trigger' onclick='join_trigger()' style=\"font-family:'Lato';font-weight:400\">Sign Up</div>
+          <div id='log_in_link' onclick='warp_to_login()' style=\"font-family:'Lato';font-weight:100\">Already a user? Login Here</div>
+        </form>
       ";
       echo "
       <script>
@@ -509,12 +541,17 @@ function build_home_highscore(){
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       $name=$row['NAME'];
-      $college=$row['COLLEGE'];
       $level=$row['LEVEL'];
       $rank=$rank+1;
-      echo "<div class='row'>
-              <span class='sl_no_col'>$rank</span><span class='name_col'>$name</span><span class='college_col'>$college</span><span class='level_col'>$level</span>
-            </div> ";
+      echo "<div class=\"row\">
+        <img class=\"row_photo\" src=\"name.jpg\">
+        <div class=\"row_text\">
+          <span class=\"row_slno\" style=\"font-family:'Lato';font-weight:100\">$rank.</span>
+          <span class=\"row_name\" style=\"font-family:'Lato';font-weight:400\">$name</span><br><br>
+          <span class=\"row_showlevel\" style=\"font-family:'Lato';font-weight:100\">Level:</span>
+          <span class=\"row_level\" style=\"font-family:'Lato';font-weight:400\">$level</span>
+        </div>
+      </div>";
     }
   }
 }
@@ -527,9 +564,16 @@ function build_away_highscore(){
       $college=$row['COLLEGE'];
       $level=$row['LEVEL'];
       $rank=$rank+1;
-      echo "<div class='row'>
-              <span class='sl_no_col'>$rank</span><span class='name_col'>$name</span><span class='college_col'>$college</span><span class='level_col'>$level</span>
-            </div> ";
+      echo "<div class=\"row\">
+        <img class=\"row_photo\" src=\"name.jpg\">
+        <div class=\"row_text\">
+          <span class=\"row_slno\" style=\"font-family:'Lato';font-weight:100\">$rank.</span>
+          <span class=\"row_name\" style=\"font-family:'Lato';font-weight:400\">$name</span><br>
+          <span class=\"row_college\" style=\"font-family:'Lato';font-weight:100\">$college</span><br>
+          <span class=\"row_showlevel\" style=\"font-family:'Lato';font-weight:100\">Level:</span>
+          <span class=\"row_level\" style=\"font-family:'Lato';font-weight:400\">$level</span>
+        </div>
+      </div>";
   	}
   }
 }
