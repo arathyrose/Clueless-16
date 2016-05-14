@@ -136,7 +136,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
       <div id=\"HOME_2\" style=\"position:fixed\">
           <div id=\"HOME2_Text\" style=\"font-family:'Lato';font-weight:400;\">Welcome</div>
           <div id=\"HOME2_Text2\" style=\"font-family:'Lato';font-weight:100;\">Gotham awaits your call..</div>
-          <div id=\"fb_button\" style=\"width:100px;height:50px;background-color:#2D6DD7;\" onclick='trigger_login()'>Login</div>
+          <div id=\"fb_button\" style=\"width:100px;height:50px;background-color:#2D6DD7;font-family:'Lato';font-weight:400;\" onclick='trigger_login()'>FB Login</div>
       </div>
           ";
     }
