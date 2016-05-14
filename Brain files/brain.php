@@ -536,10 +536,10 @@ else if($Error_code==3){
     echo "<script>throw_error('Passwords dont match');</script>";
 }
 else if($Error_code==4){
-    echo "<script>throw_error('SUCCESS');</script>";
+    echo "<script>throw_error('Correct Answer.');</script>";
 }
 else if($Error_code==5){
-    echo "<script>throw_error('FAIL');</script>";
+    echo "<script>throw_error('Wrong Answer.');</script>";
 }
 else{
 
