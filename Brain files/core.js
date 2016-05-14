@@ -9,8 +9,7 @@ function gototathva(){
 function update_colors(){
   document.getElementById('content').style.color=main_color;
     document.getElementById('background').style.color=main_color;
-
-    main_color="rgb("+((Date.now()%70)+190)+","+((Date.now()%70)+190)+","+((Date.now()%70)+0)+")";
+    main_color="rgb("+((Date.now()%50)+205)+","+((Date.now()%50)+205)+",0)";
 }
 var toggle=0;
 function scroll_down(){

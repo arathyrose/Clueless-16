@@ -458,11 +458,9 @@ else if($op_code==3){              //USER DETAILS MANAGEMENT
           $password=$_POST["PASSWORD"];
           $check=check_if_present($email);
           if($check==0){
-            echo "<script>throw_error('EMEAIL NOT PRESENT');</script>";
             echo "<script>load('OPCODE=1&ERROR_CODE=1&DEST=7');</script>";
           }
           else{
-            echo "<script>throw_error('EMEAIL PRESENT AUTHENTICATING');</script>";
             $check=authenticator($email,$password);
             if($check==0){
               echo "<script>load('OPCODE=1&ERROR_CODE=1&DEST=7');</script>";
@@ -516,7 +514,6 @@ function cur_user_name(){
 }
 function cur_user_cur_level(){
   $email=$_SESSION['EMAIL'];
-    echo "<script>throw_error('Retriving level of $email');</script>";
   $result=execute_MYSQL("SELECT LEVEL FROM USERS WHERE EMAIL='$email'");
   if ($result->num_rows > 0) {
   	// output data of each row
@@ -600,7 +597,6 @@ function update_level(){
  $result=execute_MYSQL("UPDATE USERS SET LEVEL=$cur_level WHERE EMAIL='$email'");
 }
 function check_if_present($email){
-  echo "<script>throw_error('Checking if $email is present');</script>";
   $result=execute_MYSQL("SELECT * FROM USERS WHERE EMAIL='$email'");
   if ($result->num_rows > 0){
   	return 1;
@@ -615,7 +611,6 @@ function authenticator($email,$password){
     	// output data of each row
   	while($row = $result->fetch_assoc()) {
       $r_password=$row['PASSWORD'];
-        //echo "<script>throw_error('Checking if $email is authentic. $password==$r_password');</script>";
   			if($row['PASSWORD']==$password){
 
   							$_SESSION["EMAIL"]=$email;
@@ -649,7 +644,6 @@ function execute_MYSQL($sql){
   {
      die("Connection failed: " . $conn->connect_error);
   }
-  //echo "<script>throw_error('SUCCESSFULLY ESTABLISHED CONNECTION');</script>";
   $result = $conn->query($sql);
   $conn->close();
   return $result;
