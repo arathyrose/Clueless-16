@@ -244,27 +244,26 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               clean_PROFILE();
               </script>
               ";
-          echo "<img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
-              <div id='Profile_heading'>Profile:</div>
-              <div>Name:";
-          echo cur_user_name();
-          echo "</div>
-              <div>Level:";
-          echo cur_user_cur_level();
-          echo "</div>
-                <div>College:";
-          echo cur_user_college();
-          echo "</div>
-          <div id='sidebar'>
-            <img id='sidebar_trigger_sidebar' src=\"arrow_right.png\" onclick=\"closesidebar()\">
-            <div id='link0' onclick='jump_to_question()'  style=\"font-family:'Lato';font-weight:400\">Game</div>
-            <div id='link1' onclick='jump_to_profile()'  style=\"font-family:'Lato';font-weight:400\">Profile</div>
-            <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
-            <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
-            <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
-            <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
-          </div>
-                ";
+
+          $name=cur_user_name();
+          $level=cur_user_cur_level();
+          $college=cur_user_college();
+                echo "<div id=\"page_data\">
+                    <img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
+                    <div id="Heading" style=\"font-family:'Lato';font-weight:400\">Profile:</div>
+                    <div id='line1' style=\"font-family:'Lato';font-weight:400\">Name:<span style=\"margin-left:50px;font-weight:100\">$name</span></div>
+                    <div id='line2' style=\"font-family:'Lato';font-weight:400\">College:<span style=\"margin-left:50px;font-weight:100\">$college</span></div>
+                    <div id='line3' style=\"font-family:'Lato';font-weight:400\">Level:<span style=\"margin-left:50px;font-weight:100\">$level</span></div>
+                  </div>
+                  <div id='sidebar'>
+                    <img id='sidebar_trigger_sidebar' src=\"arrow_right.png\" onclick=\"closesidebar()\">
+                    <div id='link0' onclick='jump_to_question()'  style=\"font-family:'Lato';font-weight:400\">Game</div>
+                    <div id='link1' onclick='jump_to_profile()'  style=\"font-family:'Lato';font-weight:400\">Profile</div>
+                    <div id='link2' onclick='jump_to_rules()'  style=\"font-family:'Lato';font-weight:400\">Rules</div>
+                    <div id='link3' onclick='jump_to_highscore_A()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Away</div>
+                    <div id='link4' onclick='jump_to_highscore_H()'  style=\"font-family:'Lato';font-weight:400\">Highscore-Home</div>
+                    <img id='tathva_sidebar' src='tathva_black.png' onclick=\"gototathva()\">
+                  </div>";
         }
         else if($destination==5){             //Highscore-Away
           echo "<script>
@@ -413,6 +412,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
         function warp_to_login(){
           load('OPCODE=1&ERROR_CODE=0&DEST=7');
         }
+        clean_JOIN();
       </script>
       ";
   }
