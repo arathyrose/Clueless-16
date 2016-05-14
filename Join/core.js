@@ -1,6 +1,6 @@
 var client_window_height=900;
 var client_window_width=1400;
-var main_color="#BFFF00";
+var main_color="#FFFF00";
 var background_color="#000";
 var scroll_over=true;
 function gototathva(){
@@ -31,14 +31,16 @@ function toggle_HOME_2(){
 function callsidebar(){
   var filterVal = 'blur(4px)';
   $('#page_data').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
-
+  $("#tathva_sidebar").fadeIn();
   $("#sidebar").animate({
       left:"0px"
   },500,function(){});
 }
 function closesidebar(){
   var filterVal = 'blur(0px)';
+
   $('#page_data').css('filter',filterVal).css('webkitFilter',filterVal).css('mozFilter',filterVal).css('oFilter',filterVal).css('msFilter',filterVal) .css('transition', 'all 2s ease-out').css('-webkit-transition', 'all 2s ease-out').css('-moz-transition', 'all 2s ease-out').css('-o-transition', 'all 2s ease-out');
+$("#tathva_sidebar").fadeOut();
   $("#sidebar").animate({
       left:"-"+client_window_width+"px"
   },500,function(){});
@@ -68,6 +70,7 @@ function initsidebar(){
     document.getElementById("link"+i).style.marginLeft=client_window_width/20;
   }
   document.getElementById("tathva_sidebar").style.position="fixed";
+  document.getElementById("tathva_sidebar").style.display="none";
   document.getElementById("tathva_sidebar").style.left="10px";
   document.getElementById("tathva_sidebar").style.bottom="10px";
   document.getElementById("tathva_sidebar").style.width=client_window_width/10+"px";
