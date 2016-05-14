@@ -7,8 +7,8 @@ function clean_QUESTION(){
   <div id='answer_box' contenteditable='true'>Answer here</div>
   <div id='Submit_button' onclick='check_answer()'>Submit</div>
 */
-  $("#level").css("font-size",client_window_height/15+"px").css('margin-top',client_window_height/15).css('margin-bottom',client_window_height/15);
-  $("#q_image").css("height",client_window_height/3+"px");
+  $("#level").css("font-size",client_window_height/15+"px").css('margin-top',client_window_height/15).css('margin-bottom',client_window_height/25);
+  $("#q_image").css("height",client_window_height/2+"px");
   document.getElementById("answer_box").style.marginTop=client_window_height/25;
   document.getElementById("answer_box").style.fontSize=client_window_height/20;
   document.getElementById("answer_box").style.padding = "5px";

@@ -250,7 +250,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
           $college=cur_user_college();
                 echo "<div id=\"page_data\">
                     <img id='sidebar_trigger_content' src=\"arrow_left.png\" onclick=\"callsidebar()\">
-                    <div id="Heading" style=\"font-family:'Lato';font-weight:400\">Profile:</div>
+                    <div id=\"Heading\" style=\"font-family:'Lato';font-weight:400\">Profile:</div>
                     <div id='line1' style=\"font-family:'Lato';font-weight:400\">Name:<span style=\"margin-left:50px;font-weight:100\">$name</span></div>
                     <div id='line2' style=\"font-family:'Lato';font-weight:400\">College:<span style=\"margin-left:50px;font-weight:100\">$college</span></div>
                     <div id='line3' style=\"font-family:'Lato';font-weight:400\">Level:<span style=\"margin-left:50px;font-weight:100\">$level</span></div>
@@ -636,7 +636,7 @@ function execute_MYSQL($sql){
   $servername="localhost";
   $username = "root";
   $password='Amaljose@96';
-  $database= "clueless_16";
+  $database= "test";
   // Create connection
   $conn = new mysqli($servername, $username, $password, $database);
   // Check connection
