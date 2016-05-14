@@ -163,6 +163,7 @@ if($op_code==1){                    ////////////TIME FOR DIRECT LINK
               clean_QUESTION();
              </script>";
         $level=cur_user_cur_level(); //OBTAIN FROM DATABASE
+        echo "<div>Level $level</div>";
         echo "
             <img src='";
         $img_name=get_image_name($level);

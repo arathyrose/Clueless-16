@@ -1,0 +1,61 @@
+<html>
+<head>
+  <script src="jquery.js"></script>
+  <script src="core.js"></script>
+  <script src="question.js"></script>
+  <script src="background_manager.js"></script>
+</head>
+<body>
+  <style>
+  @font-face {
+    font-family: 'Lucida';
+    font-style: normal;
+    font-weight: 100;
+    src:  url(alt.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Lato Hairline'), local('Lato-Hairline'), url(thin.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(ok.woff) format('woff');
+  }
+  #background{
+    top:0px;
+    z-index: -1;
+  }
+    .random_bar{
+      font-family: 'Lato';
+      font-weight: 100;
+      width:900px;
+      padding-bottom: 20px;
+    }
+  </style>
+  <div id="background" style="position:fixed;height:900px;width:1440px;margin-top:-20px"></div>
+  <div id="content">
+    <div id="page_data">
+        <img id='sidebar_trigger_content' src="arrow_left.png" onclick="callsidebar()">
+        <center><div id='level'>Level 1</div>
+        <img id='q_image' src='name.jpg'>
+        <div id='answer_box' contenteditable='true'>Answer here</div>
+        <div id='Submit_button' onclick='check_answer()'>Submit</div></center>
+      </div>
+        <div id='sidebar'>
+          <img id='sidebar_trigger_sidebar' src="arrow_right.png" onclick="closesidebar()">
+          <div id='link0' onclick='jump_to_question()'  style="font-family:'Lato';font-weight:400">Game</div>
+          <div id='link1' onclick='jump_to_profile()'  style="font-family:'Lato';font-weight:400">Profile</div>
+          <div id='link2' onclick='jump_to_rules()'  style="font-family:'Lato';font-weight:400">Rules</div>
+          <div id='link3' onclick='jump_to_highscore_A()'  style="font-family:'Lato';font-weight:400">Highscore-Away</div>
+          <div id='link4' onclick='jump_to_highscore_H()'  style="font-family:'Lato';font-weight:400">Highscore-Home</div>
+          <img id='tathva_sidebar' src='tathva_black.png' onclick="gototathva()">
+        </div>
+  </div>
+
+    <script>clean_QUESTION();</script>
+</body>
+</html>
